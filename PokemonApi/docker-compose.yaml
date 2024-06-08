@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  pokemonapi:
+    image: pokemonapi
+    build:
+      context: .
+      dockerfile: PokemonApi/Dockerfile
+    ports:
+      - "8080:80"  # Maps host port 8080 to container port 80
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=LAPTOP-U4688V5M;Database=PokeDB;User Id=api;Password=api;TrustServerCertificate=true;"
